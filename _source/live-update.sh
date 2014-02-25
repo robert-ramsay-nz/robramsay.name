@@ -3,10 +3,10 @@
 if [ "$1" = "--run-once" ] ;then
    # Commands
    haml ./index.haml > ../index.html
-   echo "html generated."
    rsync -ai ./css/ ../css/
    rsync -ai ./images/ ../images/
 
+   echo "site updated."
    exit
 fi
 
