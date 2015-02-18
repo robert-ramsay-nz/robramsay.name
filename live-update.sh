@@ -1,36 +1,34 @@
 #!/bin/sh
 
+BUILDDIR="./_public"
+
 if [ "$1" = "--run-once" ] ;then
-   # Commands
-   #haml ./index.haml > ../index.html
-   #haml ./about.haml > ../about.html
-   #haml ./old-index.haml > ../old-index.html
+   mkdir -p "$BUILDDIR"
 
-   find . -iname '*.haml' -exec bash -c 'mkdir -p "../$(dirname {})"' \;
-   find . -iname '*.haml' -exec bash -c 'haml "{}" > "../$(echo "{}" | sed s/\.haml$// ).html"' \;
+   find . -iname '*.haml' -exec bash -c "haml \"{}\" \> "$BUILDDIR/$(echo \"{}\" | sed s/\.haml$// ).html"" \;
 
-   mkdir -p ../testing
-   cp testing/*.html ../testing
+   mkdir -p "$BUILDDIR/testing"
+   cp testing/*.html "$BUILDDIR/testing"
 
-   mkdir -p ../testing/stylesheets
+   mkdir -p "$BUILDDIR/testing/stylesheets"
    for scss_file in testing/stylesheets/*.css.scss ; do 
       css_file="$(echo "$scss_file" | sed s/\.scss$//g)"
-      scss "$scss_file" > "../$css_file"
+      scss "$scss_file" > "$BUILDDIR/$css_file"
    done
 
-   rsync -ai ./testing/images/ ../testing/images/
+   rsync -ai ./testing/images/ "$BUILDDIR/testing/images/"
 
-   cp *.html ..
+   cp *.html "$BUILDDIR/"
 
-   mkdir -p ../stylesheets
+   mkdir -p "$BUILDDIR/stylesheets"
    for scss_file in stylesheets/*.css.scss ; do 
       css_file="$(echo "$scss_file" | sed s/\.scss$//g)"
-      scss "$scss_file" > "../$css_file"
+      scss "$scss_file" > "$BUILDDIR/$css_file"
    done
 
-   rsync -ai ./css/ ../css/
+   rsync -ai ./css/ "$BUILDDIR/css/"
 
-   rsync -ai ./images/ ../images/
+   rsync -ai ./images/ "$BUILDDIR/images/"
 
    echo "site updated."
    exit
