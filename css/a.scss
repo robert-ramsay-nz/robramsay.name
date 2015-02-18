@@ -1,24 +1,4 @@
-// Add Bourbon, Neat, and Bitters (so we can use Refills)
-@import "bourbon/bourbon";
-@import "base/base";
-@import "neat/neat";
-
-
-.container {
-  @include outer-container;
-
-  .sidebar {
-     @include span-columns(3);
-   }
-
-  .content {
-     @include span-columns(9);
-  }
-}
-
-
-
-.type-system-serif {
+article.type-system-serif {
   $serif: 'Lusitana', serif;
   $serif-2: 'Merriweather', serif;
   $sans-serif: 'Merriweather Sans', sans-serif;
@@ -100,14 +80,6 @@
       font-weight: 700;
     }
   }
-
- ul,ol {
-   font-family: $serif-2;
-    line-height: 1.6em;
-    font-size: .9em;
-   list-style-type: disc;
-   padding-left: 1.5em;
- }
 
   a.read-more {
     display: inline-block;
