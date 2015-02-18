@@ -2,9 +2,12 @@
 
 if [ "$1" = "--run-once" ] ;then
    # Commands
-   haml ./index.haml > ../index.html
-   haml ./about.haml > ../about.html
-   haml ./new-index.haml > ../new-index.html
+   #haml ./index.haml > ../index.html
+   #haml ./about.haml > ../about.html
+   #haml ./old-index.haml > ../old-index.html
+
+   find . -iname '*.haml' -exec bash -c 'mkdir -p "../$(dirname {})"' \;
+   find . -iname '*.haml' -exec bash -c 'haml "{}" > "../$(echo "{}" | sed s/\.haml$// ).html"' \;
 
    mkdir -p ../testing
    cp testing/*.html ../testing
