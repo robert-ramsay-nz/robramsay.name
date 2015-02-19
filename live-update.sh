@@ -1,11 +1,12 @@
 #!/bin/sh
 
-BUILDDIR="./_public"
+export BUILDDIR="./_public"
 
 if [ "$1" = "--run-once" ] ;then
    mkdir -p "$BUILDDIR"
 
-   find . -iname '*.haml' -exec bash -c "haml \"{}\" \> "$BUILDDIR/$(echo \"{}\" | sed s/\.haml$// ).html"" \;
+   find . -path '*/_*/*' -prune -o -name '*.haml' -exec bash -c 'mkdir -p "$BUILDDIR/$(dirname "{}")"' \;
+   find . -path '*/_*/*' -prune -o -name '*.haml' -exec bash -c 'haml "{}" > "$BUILDDIR/$(echo "{}" | sed s/\.haml$// ).html"' \;
 
    mkdir -p "$BUILDDIR/testing"
    cp testing/*.html "$BUILDDIR/testing"
