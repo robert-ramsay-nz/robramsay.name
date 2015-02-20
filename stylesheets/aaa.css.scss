@@ -4,6 +4,12 @@
 @import "neat/neat";
 
 
+.sidebar {
+  .nav-link {
+    color: #333;
+  }
+}
+
 .container {
   @include outer-container;
 
