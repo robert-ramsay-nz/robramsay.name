@@ -1,4 +1,0 @@
-# see https://github.com/mojombo/jekyll/wiki/Configuration
-baseurl:    /
-source: .
-destination: _site
