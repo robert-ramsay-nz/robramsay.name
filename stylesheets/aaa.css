@@ -235,6 +235,9 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit; }
 
+.sidebar .nav-link {
+  color: #333; }
+
 .container {
   max-width: 68em;
   margin-left: auto;
