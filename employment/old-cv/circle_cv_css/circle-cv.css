@@ -1,0 +1,109 @@
+
+/* Basic globals */
+
+body {
+  font-family: "Times New Roman";
+  font-size: 10.5pt;
+  /*font-family: Verdana,sans-serif;*/
+}
+
+
+/* Set page dimensions, borders, etc.*/
+
+html { background: #F3F3F3 }
+body { background: white; }
+
+body {
+	border-color: #BBB;
+	border-style: solid;
+	border-width: 1px 2px 2px 1px;
+
+
+	/* 210 mm = A4 width, 10mm = default wkhtmltopdf margin */
+	width: 190mm;
+	padding: 10mm;
+	margin: 0;
+}
+
+.head_box { margin-left: 17.5mm; } 
+.body_box { margin-left: 17.5mm; }
+.body_box { margin-right: 14mm; }
+
+/* Print settings. */
+
+@media print {
+	body {
+		width: 190mm;
+		padding: 0;
+		border-style: none;
+	}
+
+	html { background: white; }
+
+	.head_box { margin-left: 17.5mm; } 
+	.body_box { margin-left: 17.5mm; }
+	.body_box { margin-right: 14mm; }
+
+	.pagebreak  { display:block; page-break-before:always; }
+}
+
+
+/* Style header-images, and header-paragraphs */
+
+.head_box img {
+	height: 15.9mm; 
+	width: 15.1mm;
+	margin-left: -16.7mm;
+	float: left;
+}
+
+.h2_img { 
+	margin-left: -6.6mm;
+	width: 4.2mm;
+	height: 4,2mm;
+	float: left;
+}
+
+
+/* Adjust spacing of elements */
+
+.head_box h1 { margin: 8mm 0 0 0; }
+.head_box p { margin: 0; }
+
+.head_box { margin-bottom: 4.0mm; }
+
+.h2_img {padding-top: 6mm;}
+h2 { 
+	padding: 5mm 0 0; 
+	margin: 0;
+}
+p { margin: 2.4mm 0 0; }
+li { margin: 2.4mm 0 0; }
+ul { margin: 0; }
+
+
+/* Custom styling */
+
+h1 {
+	/*font-size: 20pt;*/
+	font-size: 2.2em;
+	font-weight: normal;
+}
+
+h2 {
+  /*font-size: 12pt;*/
+  font-size: 1.4em;
+  font-weight: normal;
+  border-bottom: 0.5pt solid black;
+}
+
+p, ol, ul {
+  /*font-size: 9pt;*/
+  font-size: 1em;
+}
+
+ul {
+	padding-left: 4.0mm;
+}
+
+
