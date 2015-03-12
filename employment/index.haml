@@ -7,15 +7,26 @@
 %body
   .container.type-system-serif
     .sidebar
-      %h1 
-        %a.nav-link(href="/") Rob Ramsay
+      .mobile-nav
+        %h2
+          %a.nav-link(href="/") Home
+          &ndash;
+          %a.nav-link(href="/blog") Blog
+          &ndash;
+          %a.nav-link(href="/projects") Projects
+          &ndash;
+          %a.nav-link(href="/contact") Contact
 
-      %h2
-        %a.nav-link(href="/blog") Blog
-      %h2
-        %a.nav-link(href="/projects") Projects
-      %h2
-        %a.nav-link(href="/contact") Contact
+      .desktop-nav
+        %h1
+          %a.nav-link(href="/") Rob Ramsay
+
+        %h2
+          %a.nav-link(href="/blog") Blog
+        %h2
+          %a.nav-link(href="/projects") Projects
+        %h2
+          %a.nav-link(href="/contact") Contact
 
     .content
       %h1 Employment
