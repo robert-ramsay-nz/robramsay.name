@@ -235,6 +235,10 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit; }
 
+.sidebar h2, .sidebar h1 {
+  display: table;
+  margin-left: auto;
+  margin-right: auto; }
 .sidebar .nav-link {
   color: #333; }
 
@@ -253,6 +257,23 @@ html {
     width: 23.23176%; }
     .container .sidebar:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 500px) {
+      .container .sidebar {
+        float: left;
+        display: block;
+        margin-right: 7.42297%;
+        width: 100%; }
+        .container .sidebar:last-child {
+          margin-right: 0; } }
+    .container .sidebar .desktop-nav {
+      display: block; }
+    .container .sidebar .mobile-nav {
+      display: none; }
+    @media screen and (max-width: 500px) {
+      .container .sidebar .desktop-nav {
+        display: none; }
+      .container .sidebar .mobile-nav {
+        display: block; } }
   .container .content {
     float: left;
     display: block;
@@ -260,6 +281,14 @@ html {
     width: 74.41059%; }
     .container .content:last-child {
       margin-right: 0; }
+    @media screen and (max-width: 500px) {
+      .container .content {
+        float: left;
+        display: block;
+        margin-right: 7.42297%;
+        width: 100%; }
+        .container .content:last-child {
+          margin-right: 0; } }
 
 .type-system-serif {
   text-align: left; }
