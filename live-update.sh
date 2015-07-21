@@ -2,7 +2,7 @@
 
 export BUILDDIR="./_public"
 
-if [ "$1" = "--run-once" ] ;then
+# if [ "$1" = "--run-once" ] ;then
    mkdir -p "$BUILDDIR"
 
    find . -path '*/_*/*' -prune -o -name '*.haml' -exec bash -c 'mkdir -p "$BUILDDIR/$(dirname "{}")"' \;
@@ -33,10 +33,10 @@ if [ "$1" = "--run-once" ] ;then
 
    echo "site updated."
    exit
-fi
-
-# Run on startup
-$0 --run-once
-
-# Files to watch
-filewatcher "*.html *.haml images/* stylesheets/* css/*"  "$0 --run-once"
+# fi
+#
+# # Run on startup
+# $0 --run-once
+#
+# # Files to watch
+# filewatcher "*.html *.haml images/* stylesheets/* css/*"  "$0 --run-once"
