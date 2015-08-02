@@ -5,32 +5,34 @@
   %link(rel="stylesheet" href="../stylesheets/aaa.css")
 
 %body
+  %header
+    .container
+      %h1
+        %a(href="/") Rob Ramsay
   .container.type-system-serif
     .sidebar
-      .mobile-nav
-        %h2
-          %a.nav-link(href="/") Home
-          &ndash;
-          %a.nav-link(href="/blog") Blog
-          &ndash;
-          %a.nav-link(href="/music") Music
-          &ndash;
-          %a.nav-link(href="/employment") Employment
-          &ndash;
-          %a.nav-link(href="/contact") Contact
-
-      .desktop-nav
-        %h1
-          %a.nav-link(href="/") Rob Ramsay
-
-        %h2
-          %a.nav-link(href="/blog") Blog
-        %h2
-          %a.nav-link(href="/music") Music
-        %h2
-          %a.nav-link(href="/employment") Employment
-        %h2
-          %a.nav-link(href="/contact") Contact
+      %nav.main-nav
+        %ul
+          %li
+            %a(href="/blog") Blog
+          %li
+            %a(href="/music") Music
+          %li.current
+            %a(href="/employment") Employment
+      %nav.contact
+        %ul
+          %li
+            %a(href="http://twitter.com/robramsaynz")
+              %img.social-icon(src="../images/icon-twitter.svg")
+              Twitter
+          %li
+            %a(href="https://github.com/robramsaynz")
+              %img.social-icon(src="../images/icon-github.svg")
+              Github
+          %li
+            %a(href="mailto:robert.ramsay.nz@gmail.com")
+              %img.social-icon(src="../images/icon-mail.svg")
+              Email
 
     .content
       %h1 Employment
