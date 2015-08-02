@@ -3,52 +3,30 @@
 @import "base/base";
 @import "neat/neat";
 
-@mixin center-block {
-  display: table;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.sidebar {
-  h2, h1 {
-   @include center-block;
-  }
-
-  .nav-link {
-    color: #333;
-  }
-}
 
 .container {
   @include outer-container;
-  $mobile: new-breakpoint(max-width 500px 4);
-
 
   .sidebar {
      @include span-columns(3);
-
-     @include media($mobile) {
-       @include span-columns(4);
-     }
-
-     .desktop-nav { display: block }
-     .mobile-nav  { display: none }
-     @include media($mobile) {
-       .desktop-nav { display: none }
-       .mobile-nav  { display: block }
-     }
    }
 
   .content {
      @include span-columns(9);
-
-     @include media($mobile) {
-       @include span-columns(4);
-     }
   }
 }
 
-
+body {
+  margin: 0;
+}
+header {
+  background: #ededed;
+  height: 50px;
+  width: 100%;
+  color: #444;
+  margin-bottom: 2em;
+  a { color: #444; }
+}
 
 .type-system-serif {
   $serif: 'Lusitana', serif;
@@ -58,6 +36,34 @@
   @include clearfix;
   text-align: left;
 
+  nav {
+    ul{
+      padding-left: 0;
+      li {
+        list-style: none;
+        a { text-decoration: none; }
+      }
+    }
+    &.main-nav {
+      font-size: 1.5em;
+      line-height: 1.3em;
+      margin-bottom: 20px;
+    }
+    &.contact {
+      border-top: 1px solid #ededed;
+      padding-top: 20px;
+      a { color: #303030; }
+    }
+  }
+
+  .social-icon {
+    width: 18px;
+  }
+
+  ul.contact-details {
+    list-style: none;
+    padding-left: 0;
+  }
   .type {
     border-bottom: 1px solid;
     display: inline-block;
@@ -106,11 +112,16 @@
   }
 
   h3 {
-    font-family: $serif;
+    font-family: $sans-serif;
     font-size: 1.4em;
     font-weight: 400;
     line-height: 1.3em;
     margin-bottom: .4em;
+    small {
+      text-transform: uppercase;
+      color: #999;
+      font-size: .90rem;
+    }
   }
 
   p.date {
@@ -134,11 +145,12 @@
   }
 
  ul,ol {
-   font-family: $serif-2;
-    line-height: 1.6em;
-    font-size: .9em;
-   list-style-type: disc;
-   padding-left: 1.5em;
+  font-family: $serif-2;
+  line-height: 1.6em;
+  font-size: .9em;
+  list-style-type: disc;
+  padding-left: 1.5em;
+  margin-bottom: 3px;
  }
 
   a.read-more {
@@ -159,7 +171,7 @@
       right: -12px;
     }
   }
-  
+
   hr {
     width: 3em;
   }
