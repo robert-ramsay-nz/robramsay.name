@@ -358,7 +358,8 @@ html {
     line-height: 1.6em;
     font-size: .9em;
     list-style-type: disc;
-    padding-left: 1.5em; }
+    padding-left: 1.5em;
+    margin-bottom: 1.5em; }
   .type-system-serif a.read-more {
     display: inline-block;
     font-family: "Merriweather Sans", sans-serif;
